@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "lib": ["es6"],
+    "module": "commonjs",
+    "target": "es6"
+  },
+  "include": ["**/*.js"]
+}
