@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "deploy": "cp dist/* '/Users/admin/Library/Application Support/screeps/scripts/screeps.com/screeps-learn-JS'"
+    "deploy": "cp dist/* '/Users/admin/Library/Application Support/screeps/scripts/screeps.com/screeps-learn-JS'",
+    "release": "standard-version"
   },
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
     "babel-loader": "^10.0.0",
+    "standard-version": "^9.5.0",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1"
   },
