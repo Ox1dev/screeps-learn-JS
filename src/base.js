@@ -17,6 +17,12 @@ var base = {
                 checkCellAndCreateExtensionConstructionSite(x - 2, y + 2)
                 checkCellAndCreateExtensionConstructionSite(x - 2, y - 2)
                 checkCellAndCreateExtensionConstructionSite(x + 4, y)
+            } else if (levelController === 3) {
+                checkCellAndCreateExtensionConstructionSite(x + 2, y)
+                checkCellAndCreateExtensionConstructionSite(x, y + 2)
+                checkCellAndCreateExtensionConstructionSite(x, y - 2)
+                checkCellAndCreateExtensionConstructionSite(x - 2, y)
+                checkCellAndCreateExtensionConstructionSite(x - 4, y)
             }
         }
 
