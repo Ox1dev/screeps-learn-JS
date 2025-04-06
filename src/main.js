@@ -1,5 +1,6 @@
 var roleHarvester = require('@/role.harvester');
 var roleBuilder = require('@/role.builder');
+var roleUpgrader = require('@/role.upgrader');
 var factory = require('@/factory');
 var base = require('@/base');
 var utils = require('@/utils');
@@ -15,6 +16,9 @@ module.exports.loop = function () {
         }
         if(creep.memory.role === 'builder') {
             roleBuilder.run(creep);
+        }
+        if(creep.memory.role === 'upgrader') {
+            roleUpgrader.run(creep);
         }
     }
 }
