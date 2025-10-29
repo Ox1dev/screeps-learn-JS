@@ -13,12 +13,25 @@ var roleBuilder = {
 	    }
 
 	    if(creep.memory.building) {
-	        var targets = creep.room.find(FIND_CONSTRUCTION_SITES);
-            if(targets.length && creep.room.controller.ticksToDowngrade > 100) {
-                if(creep.build(targets[0]) === ERR_NOT_IN_RANGE) {
-                    creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
-                }
-            } else {
+	        const constructionSites = creep.room.find(FIND_CONSTRUCTION_SITES);
+			// compare current value hp of structure with max hp value
+			const structuresToBeRepaired = creep.room.find(FIND_STRUCTURES, {
+				filter: object => object.hits < object.hitsMax
+			});
+
+            if(creep.room.controller.ticksToDowngrade > 100 && constructionSites.length) {
+				constructionSite = constructionSites[0];
+				if(creep.build(constructionSite) === ERR_NOT_IN_RANGE) {
+					creep.moveTo(constructionSite, {visualizePathStyle: {stroke: '#ffffff'}});
+				}
+            } else if(creep.room.controller.ticksToDowngrade > 100 && structuresToBeRepaired.length > 0) {
+				// put the most damaged structure on the top
+				structuresToBeRepaired.sort((a,b) => a.hits - b.hits);
+
+				if(creep.repair(structuresToBeRepaired[0]) === ERR_NOT_IN_RANGE) {
+					creep.moveTo(structuresToBeRepaired[0]);
+				}
+			} else {
 				if(creep.upgradeController(creep.room.controller) === ERR_NOT_IN_RANGE) {
 					creep.moveTo(creep.room.controller, {visualizePathStyle: {stroke: '#ffffff'}});
 					creep.say('nothing to build');
