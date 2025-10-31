@@ -21,4 +21,15 @@ module.exports.loop = function () {
             roleUpgrader.run(creep);
         }
     }
+
+    const towers = Game.rooms['W9N12'].find(FIND_MY_STRUCTURES, {
+        filter: { structureType: STRUCTURE_TOWER }
+    });
+
+    for (const tower of towers) {
+        const target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+        if (target) {
+            tower.attack(target);
+        }
+    }
 }
