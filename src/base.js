@@ -7,22 +7,27 @@ var base = {
         if (isCellEmpty) {
             if (levelController === 1) {
                 checkCellAndCreateExtensionConstructionSite(x + 2, y)
-                checkCellAndCreateExtensionConstructionSite(x, y - 2)
+                checkCellAndCreateExtensionConstructionSite(x + 1, y + 1)
                 checkCellAndCreateExtensionConstructionSite(x, y + 2)
+                checkCellAndCreateExtensionConstructionSite(x - 1, y + 2)
                 checkCellAndCreateExtensionConstructionSite(x - 2, y)
-                checkCellAndCreateExtensionConstructionSite(x - 4, y)
             } else if (levelController === 2) {
-                checkCellAndCreateExtensionConstructionSite(x + 2, y - 2)
-                checkCellAndCreateExtensionConstructionSite(x + 2, y + 2)
-                checkCellAndCreateExtensionConstructionSite(x - 2, y + 2)
-                checkCellAndCreateExtensionConstructionSite(x - 2, y - 2)
-                checkCellAndCreateExtensionConstructionSite(x + 4, y)
-            } else if (levelController === 3) {
-                checkCellAndCreateExtensionConstructionSite(x + 2, y)
-                checkCellAndCreateExtensionConstructionSite(x, y + 2)
+                checkCellAndCreateExtensionConstructionSite(x - 1, y - 1)
                 checkCellAndCreateExtensionConstructionSite(x, y - 2)
-                checkCellAndCreateExtensionConstructionSite(x - 2, y)
-                checkCellAndCreateExtensionConstructionSite(x - 4, y)
+                checkCellAndCreateExtensionConstructionSite(x + 1, y - 1)
+                checkCellAndCreateExtensionConstructionSite(x + 2, y - 2)
+                checkCellAndCreateExtensionConstructionSite(x + 1, y - 3)
+            } else if (levelController === 3) {
+                checkCellAndCreateExtensionConstructionSite(x - 1, y - 3)
+                checkCellAndCreateExtensionConstructionSite(x - 2, y - 2)
+                checkCellAndCreateExtensionConstructionSite(x - 3, y - 1)
+                checkCellAndCreateExtensionConstructionSite(x - 3, y + 1)
+                checkCellAndCreateExtensionConstructionSite(x - 2, y + 2)
+                checkCellAndCreateExtensionConstructionSite(x - 1, y + 3)
+                checkCellAndCreateExtensionConstructionSite(x + 1, y + 3)
+                checkCellAndCreateExtensionConstructionSite(x + 2, y + 2)
+                checkCellAndCreateExtensionConstructionSite(x + 3, y + 1)
+                checkCellAndCreateExtensionConstructionSite(x + 3, y - 1)
             }
         }
 
