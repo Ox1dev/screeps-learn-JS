@@ -1,35 +1,8 @@
-var roleHarvester = require('@/role.harvester');
-var roleBuilder = require('@/role.builder');
-var roleUpgrader = require('@/role.upgrader');
-var factory = require('@/factory');
-var base = require('@/base');
-var utils = require('@/utils');
+const stage = require('@/stages/stageLvl')
+const roleManager = require('@/roles/roleManager')
 
 module.exports.loop = function () {
-    factory.run(Game.spawns['Spawn1']);
-    base.run(Game.spawns['Spawn1']);
-    utils.run();
-    for(var name in Game.creeps) {
-        var creep = Game.creeps[name];
-        if(creep.memory.role === 'harvester') {
-            roleHarvester.run(creep);
-        }
-        if(creep.memory.role === 'builder') {
-            roleBuilder.run(creep);
-        }
-        if(creep.memory.role === 'upgrader') {
-            roleUpgrader.run(creep);
-        }
-    }
-
-    const towers = Game.rooms['W9N12'].find(FIND_MY_STRUCTURES, {
-        filter: { structureType: STRUCTURE_TOWER }
-    });
-
-    for (const tower of towers) {
-        const target = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-        if (target) {
-            tower.attack(target);
-        }
-    }
+    let spawn = Game.spawns['Spawn1'];
+    roleManager.run();
+    stage.run(spawn);
 }
