@@ -1,0 +1,34 @@
+const stage1 = require('@/stages/stage1');
+const stage2 = require('@/stages/stage2');
+const stage3 = require('@/stages/stage3');
+const stage4 = require('@/stages/stage4');
+const stage5 = require('@/stages/stage5');
+
+const stageLvl = {
+    run: function(spawn) {
+        const controllerLvl = spawn.room.controller.level;
+        let numOfHarvesters = _.filter(Game.creeps, (creep) => creep.memory.role === 'harvester').length;
+        let numOfBuilders = _.filter(Game.creeps, (creep) => creep.memory.role === 'builder').length;
+        let numOfUpgraders = _.filter(Game.creeps, (creep) => creep.memory.role === 'upgrader').length;
+        let numOfCreeps = {'harvester': numOfHarvesters, 'builder': numOfBuilders, 'upgrader': numOfUpgraders};
+        if (controllerLvl === 1) {
+            stage1.run(spawn, numOfCreeps);
+        } else if (controllerLvl === 2) {
+            stage2.run(spawn, numOfCreeps);
+        } else if (controllerLvl === 3
+            && spawn.room.find(FIND_MY_STRUCTURES, { filter:
+                { structureType: STRUCTURE_EXTENSION }}).length >= 5) {
+            stage3.run(spawn, numOfCreeps);
+        } else if (controllerLvl === 4
+            && spawn.room.find(FIND_MY_STRUCTURES, { filter:
+                { structureType: STRUCTURE_EXTENSION }}).length >= 10) {
+            stage4.run(spawn, numOfCreeps);
+        } else if (controllerLvl === 5
+            && spawn.room.find(FIND_MY_STRUCTURES, { filter:
+                { structureType: STRUCTURE_EXTENSION }}).length >= 20) {
+            stage5.run(spawn, numOfCreeps);
+        }
+    }
+};
+
+module.exports = stageLvl;

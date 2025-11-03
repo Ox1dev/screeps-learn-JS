@@ -1,6 +1,5 @@
-var roleHarvester = {
+const harvester = {
 
-    /** @param {Creep} creep **/
     run: function(creep) {
         if(creep.memory.work && creep.store[RESOURCE_ENERGY] === 0) {
             creep.memory.work = false;
@@ -11,12 +10,12 @@ var roleHarvester = {
 	        creep.say('⚡ work');
 	    }
         if(!creep.memory.work) {
-            var sources = creep.room.find(FIND_SOURCES);
+            let sources = creep.room.find(FIND_SOURCES);
             if(creep.harvest(sources[0]) === ERR_NOT_IN_RANGE) {
                 creep.moveTo(sources[0], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
         } else {
-            var targets = creep.room.find(FIND_MY_STRUCTURES, {
+            let targets = creep.room.find(FIND_MY_STRUCTURES, {
                 filter: (structure) => {
                     return (
                             structure.structureType === STRUCTURE_EXTENSION ||
@@ -30,7 +29,7 @@ var roleHarvester = {
                     creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
                 }
             } else if(creep.room.find(FIND_MY_CONSTRUCTION_SITES).length > 0) {
-                var site = creep.room.find(FIND_MY_CONSTRUCTION_SITES).find(
+                let site = creep.room.find(FIND_MY_CONSTRUCTION_SITES).find(
                     constructionSite => constructionSite.progressTotal > 0);
                 if (site) {
                     if (creep.build(site) === ERR_NOT_IN_RANGE) {
@@ -46,4 +45,4 @@ var roleHarvester = {
 	}
 };
 
-module.exports = roleHarvester;
+module.exports = harvester;
