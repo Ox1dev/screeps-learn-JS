@@ -30,7 +30,7 @@ const stage4 = {
             }
         } else if (!spawn.spawning && numOfCreeps.harvester <= 1 || numOfCreeps.builder === 0 || numOfCreeps.upgrader === 0) {
             console.log("downgrade to stage 3");
-            stage3.run(spawn);
+            stage3.run(spawn, numOfCreeps);
         }
 
         buildBase.run(spawn);
