@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.2](https://github.com/Ox1dev/screeps-learn-JS/compare/v2.1.1...v2.1.2) (2025-11-05)
+
+
+### Bug Fixes
+
+* passed spawn to the utils.js ([2257473](https://github.com/Ox1dev/screeps-learn-JS/commit/2257473a1a5dc569d76443e8acefe39ef13b9529))
+
 ### [2.1.1](https://github.com/Ox1dev/screeps-learn-JS/compare/v2.0.1...v2.1.1) (2025-11-05)
 
 
