@@ -8,5 +8,5 @@ module.exports.loop = function () {
     roleManager.run();
     stage.run(spawn);
     buildBase.run(spawn);
-    utils.run();
+    utils.run(spawn);
 }
