@@ -11,21 +11,18 @@ const stageLvl = {
         let numOfBuilders = _.filter(Game.creeps, (creep) => creep.memory.role === 'builder').length;
         let numOfUpgraders = _.filter(Game.creeps, (creep) => creep.memory.role === 'upgrader').length;
         let numOfCreeps = {'harvester': numOfHarvesters, 'builder': numOfBuilders, 'upgrader': numOfUpgraders};
+        let numOfExtensions = spawn.room.find(FIND_MY_STRUCTURES, { filter:
+                { structureType: STRUCTURE_EXTENSION }}).length;
+
         if (controllerLvl === 1) {
             stage1.run(spawn, numOfCreeps);
         } else if (controllerLvl === 2) {
             stage2.run(spawn, numOfCreeps);
-        } else if (controllerLvl === 3
-            && spawn.room.find(FIND_MY_STRUCTURES, { filter:
-                { structureType: STRUCTURE_EXTENSION }}).length >= 5) {
+        } else if (controllerLvl === 3 && numOfExtensions >= 5) {
             stage3.run(spawn, numOfCreeps);
-        } else if (controllerLvl === 4
-            && spawn.room.find(FIND_MY_STRUCTURES, { filter:
-                { structureType: STRUCTURE_EXTENSION }}).length >= 10) {
+        } else if (controllerLvl === 4 && numOfExtensions >= 10) {
             stage4.run(spawn, numOfCreeps);
-        } else if (controllerLvl === 5
-            && spawn.room.find(FIND_MY_STRUCTURES, { filter:
-                { structureType: STRUCTURE_EXTENSION }}).length >= 20) {
+        } else if (controllerLvl === 5 && numOfExtensions >= 20) {
             stage5.run(spawn, numOfCreeps);
         }
     }

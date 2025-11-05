@@ -1,16 +1,16 @@
 const roadBuilding = {
-    run: (spawn, levelController, x, y) => {
-        if (levelController === 2 && spawn.room.find(FIND_MY_STRUCTURES, { filter:
-                { structureType: STRUCTURE_EXTENSION }}).length >= 5)
-        {
+    run: (spawn, levelController, x, y, numOfExtensions) => {
+        console.log(levelController, " and ", numOfExtensions);
+
+        if (levelController >= 2  && numOfExtensions >= 5) {
             spawn.room.createConstructionSite(x + 1, y, STRUCTURE_ROAD);
             spawn.room.createConstructionSite(x, y + 1, STRUCTURE_ROAD);
             spawn.room.createConstructionSite(x - 1, y, STRUCTURE_ROAD);
             spawn.room.createConstructionSite(x, y - 1, STRUCTURE_ROAD);
         }
-        else if (levelController === 3 && spawn.room.find(FIND_MY_STRUCTURES, { filter:
-                { structureType: STRUCTURE_EXTENSION }}).length >= 10)
-        {
+        if (levelController >= 3 && numOfExtensions >= 10) {
+            console.log(levelController, " and 3 ", numOfExtensions);
+
             const centerX = x;
             const centerY = y;
             const radius = 3; // ромб 4*4
@@ -23,9 +23,8 @@ const roadBuilding = {
                 }
             }
         }
-        else if (levelController === 4 && spawn.room.find(FIND_MY_STRUCTURES, { filter:
-                { structureType: STRUCTURE_EXTENSION }}).length >= 20)
-        {
+        if (levelController >= 4 && numOfExtensions >= 20) {
+
             spawn.room.createConstructionSite(x + 4, y - 1, STRUCTURE_ROAD);
             let startY = y - 2;
             for(let startX = x + 5; startX >= x + 2; startX--) {
@@ -48,9 +47,7 @@ const roadBuilding = {
             }
             spawn.room.createConstructionSite(x - 4, y - 1, STRUCTURE_ROAD);
         }
-        else if (levelController === 5 && spawn.room.find(FIND_MY_STRUCTURES, { filter:
-                { structureType: STRUCTURE_EXTENSION }}).length >= 30)
-        {
+        if (levelController >= 5 && numOfExtensions >= 30) {
             spawn.room.createConstructionSite(x - 4, y + 1, STRUCTURE_ROAD);
             let startY = y + 2;
             for (let startX = x - 5; startX <= x - 2; startX++) {
