@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/Ox1dev/screeps-learn-JS/compare/v2.0.1...v2.1.1) (2025-11-05)
+
+
+### Bug Fixes
+
+* return attack instructions for towers ([eb354ba](https://github.com/Ox1dev/screeps-learn-JS/commit/eb354baa2e99c07a4e5456da53417b29a741a9a2))
+
 ## [2.1.0](https://github.com/Ox1dev/screeps-learn-JS/compare/v2.0.1...v2.1.0) (2025-11-05)
 
 ### [2.0.1](https://github.com/Ox1dev/screeps-learn-JS/compare/v2.0.0...v2.0.1) (2025-11-03)
