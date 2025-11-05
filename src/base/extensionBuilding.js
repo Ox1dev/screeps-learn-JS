@@ -1,24 +1,20 @@
 const extensionBuilding = {
     run: function(spawn, levelController, x, y) {
-        if (levelController === 2 && spawn.room.find(FIND_MY_STRUCTURES, { filter:
-                { structureType: STRUCTURE_EXTENSION }}).length >= 5)
-        {
+        if (levelController >= 2) {
             checkCellAndCreateExtensionConstructionSite(x + 2, y)
             checkCellAndCreateExtensionConstructionSite(x + 1, y + 1)
             checkCellAndCreateExtensionConstructionSite(x, y + 2)
             checkCellAndCreateExtensionConstructionSite(x - 1, y + 1)
             checkCellAndCreateExtensionConstructionSite(x - 2, y)
-        } else if (levelController === 3 && spawn.room.find(FIND_MY_STRUCTURES, { filter:
-                { structureType: STRUCTURE_EXTENSION }}).length >= 10)
-        {
+        }
+        if (levelController >= 3) {
             checkCellAndCreateExtensionConstructionSite(x - 1, y - 1)
             checkCellAndCreateExtensionConstructionSite(x, y - 2)
             checkCellAndCreateExtensionConstructionSite(x + 1, y - 1)
             checkCellAndCreateExtensionConstructionSite(x + 2, y - 2)
             checkCellAndCreateExtensionConstructionSite(x + 3, y - 1)
-        } else if (levelController === 4 && spawn.room.find(FIND_MY_STRUCTURES, { filter:
-                { structureType: STRUCTURE_EXTENSION }}).length >= 20)
-        {
+        }
+        if (levelController >= 4) {
             checkCellAndCreateExtensionConstructionSite(x + 4, y - 2)
             checkCellAndCreateExtensionConstructionSite(x + 3, y - 2)
             checkCellAndCreateExtensionConstructionSite(x + 3, y - 3)
@@ -29,9 +25,8 @@ const extensionBuilding = {
             checkCellAndCreateExtensionConstructionSite(x - 2, y - 4)
             checkCellAndCreateExtensionConstructionSite(x - 2, y - 3)
             checkCellAndCreateExtensionConstructionSite(x - 3, y - 3)
-        } else if (levelController === 5 && spawn.room.find(FIND_MY_STRUCTURES, { filter:
-                { structureType: STRUCTURE_EXTENSION }}).length >= 30)
-        {
+        }
+        if (levelController >= 5) {
             checkCellAndCreateExtensionConstructionSite(x - 3, y - 2)
             checkCellAndCreateExtensionConstructionSite(x - 4, y - 2)
             checkCellAndCreateExtensionConstructionSite(x - 3, y - 1)
