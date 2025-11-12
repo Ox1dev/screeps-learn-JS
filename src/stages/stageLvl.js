@@ -3,6 +3,7 @@ const stage2 = require('@/stages/stage2');
 const stage3 = require('@/stages/stage3');
 const stage4 = require('@/stages/stage4');
 const stage5 = require('@/stages/stage5');
+const stage6 = require('@/stages/stage6');
 
 const stageLvl = {
     run: function(spawn) {
@@ -24,6 +25,8 @@ const stageLvl = {
             stage4.run(spawn, numOfCreeps);
         } else if (controllerLvl === 5 && numOfExtensions >= 20) {
             stage5.run(spawn, numOfCreeps);
+        } else if (controllerLvl === 6 && numOfExtensions >= 30) {
+            stage6.run(spawn, numOfCreeps);
         }
     }
 };

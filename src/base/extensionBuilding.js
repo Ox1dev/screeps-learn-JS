@@ -38,6 +38,18 @@ const extensionBuilding = {
             checkCellAndCreateExtensionConstructionSite(x - 2, y + 3)
             checkCellAndCreateExtensionConstructionSite(x - 2, y + 4)
         }
+        if (levelController >= 6) {
+            checkCellAndCreateExtensionConstructionSite(x - 1, y + 3)
+            checkCellAndCreateExtensionConstructionSite(x - 2, y + 2)
+            checkCellAndCreateExtensionConstructionSite(x + 1, y + 3)
+            checkCellAndCreateExtensionConstructionSite(x + 2, y + 4)
+            checkCellAndCreateExtensionConstructionSite(x + 2, y + 3)
+            checkCellAndCreateExtensionConstructionSite(x + 3, y + 3)
+            checkCellAndCreateExtensionConstructionSite(x + 3, y + 2)
+            checkCellAndCreateExtensionConstructionSite(x + 4, y + 2)
+            checkCellAndCreateExtensionConstructionSite(x + 3, y + 1)
+            checkCellAndCreateExtensionConstructionSite(x + 2, y + 2)
+        }
 
         function checkCellAndCreateExtensionConstructionSite(x, y) {
             if (isCellEmpty(spawn.room, x, y)) {
