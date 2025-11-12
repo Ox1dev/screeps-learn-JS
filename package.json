@@ -1,6 +1,6 @@
 {
   "name": "screeps-learn-js",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "Learning js through screeps game",
   "main": "index.js",
   "scripts": {

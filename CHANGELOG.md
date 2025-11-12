@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/Ox1dev/screeps-learn-JS/compare/v2.1.2...v2.2.0) (2025-11-12)
+
+
+### Features
+
+* add stage for 6 lvl controller ([3346348](https://github.com/Ox1dev/screeps-learn-JS/commit/33463482a0ee835fb91afd49ffd211e5adbdec52))
+
 ### [2.1.2](https://github.com/Ox1dev/screeps-learn-JS/compare/v2.1.1...v2.1.2) (2025-11-05)
 
 
