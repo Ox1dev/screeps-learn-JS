@@ -1,5 +1,5 @@
 const extensionBuilding = {
-    run: function(spawn, levelController, x, y) {
+    run: function(room, levelController, x, y) {
         if (levelController >= 2) {
             checkCellAndCreateExtensionConstructionSite(x + 2, y)
             checkCellAndCreateExtensionConstructionSite(x + 1, y + 1)
@@ -52,8 +52,8 @@ const extensionBuilding = {
         }
 
         function checkCellAndCreateExtensionConstructionSite(x, y) {
-            if (isCellEmpty(spawn.room, x, y)) {
-                spawn.room.createConstructionSite(x, y, STRUCTURE_EXTENSION)
+            if (isCellEmpty(room, x, y)) {
+                room.createConstructionSite(x, y, STRUCTURE_EXTENSION)
                 console.log('build extension at ', x, ' ',  y)
             }
         }
