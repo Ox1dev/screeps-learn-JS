@@ -4,12 +4,19 @@ const stage2 = require('@/stages/stage2');
 
 const stage3 = {
     run: function (spawn, numOfCreeps) {
-        if (numOfCreeps.harvester < 4 && !spawn.spawning && spawn.room.energyAvailable >= 800) {
+        if (numOfCreeps.harvester < 1 && !spawn.spawning && spawn.room.energyAvailable >= 800) {
             for (let i = 0; i <= 2; i++) {
                 let newHarvester = 'Harvester' + Game.time;
-                spawn.spawnCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE], newHarvester,
+                spawn.spawnCreep([WORK, WORK, WORK, WORK, WORK, MOVE, CARRY], newHarvester,
                     {memory: {role: 'harvester'}});
                 console.log('Spawning new harvester: ' + newHarvester);
+            }
+        } else if (numOfCreeps.hauler < 2 && !spawn.spawning && spawn.room.energyAvailable >= 800) {
+            for (let i = 0; i <= 2; i++) {
+                let newHauler = 'Hauler' + Game.time;
+                spawn.spawnCreep([WORK,WORK,WORK,CARRY,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE], newHauler,
+                    {memory: {role: 'hauler'}});
+                console.log('Spawning new Hauler: ' + newHauler);
             }
         } else if (numOfCreeps.builder < 2 && !spawn.spawning && spawn.room.energyAvailable >= 800) {
             for (let i = 0; i <= 2; i++) {

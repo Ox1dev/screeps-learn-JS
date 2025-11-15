@@ -11,7 +11,9 @@ const stageLvl = {
         let numOfHarvesters = _.filter(Game.creeps, (creep) => creep.memory.role === 'harvester').length;
         let numOfBuilders = _.filter(Game.creeps, (creep) => creep.memory.role === 'builder').length;
         let numOfUpgraders = _.filter(Game.creeps, (creep) => creep.memory.role === 'upgrader').length;
-        let numOfCreeps = {'harvester': numOfHarvesters, 'builder': numOfBuilders, 'upgrader': numOfUpgraders};
+        let numOfHaulers = _.filter(Game.creeps, (creep) => creep.memory.role === 'hauler').length;
+        let numOfCreeps = {'harvester': numOfHarvesters, 'builder': numOfBuilders, 'upgrader': numOfUpgraders,
+            'hauler': numOfHaulers};
         let numOfExtensions = spawn.room.find(FIND_MY_STRUCTURES, { filter:
                 { structureType: STRUCTURE_EXTENSION }}).length;
 

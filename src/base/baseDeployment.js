@@ -1,5 +1,6 @@
 const extensionBuilding = require('@/base/extensionBuilding');
 const roadBuilding = require('@/base/roadBuilding');
+const containerBuilding = require('@/base/containerBuilding');
 
 const baseDeployment = {
     run: function(spawn) {
@@ -11,6 +12,7 @@ const baseDeployment = {
 
         extensionBuilding.run(spawn, levelController, x, y);
         roadBuilding.run(spawn, levelController, x, y, numOfExtensions);
+        containerBuilding.run(room);
     }
 }
 module.exports = baseDeployment
